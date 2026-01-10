@@ -1,0 +1,398 @@
+/* --- Modern Variables --- */
+:root {
+    --primary: #ff9aa2;         /* ชมพูหลัก */
+    --primary-dark: #ff808b;    /* ชมพูเข้มสำหรับ Hover/Text */
+    --accent: #ffdac1;          /* ส้มพีชอ่อนๆ */
+    --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 8px 32px 0 rgba(255, 154, 162, 0.15);
+    --text-main: #4a4a4a;
+    --text-light: #7a7a7a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background: #FFF0F5;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Shapes */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+}
+.shape-1 {
+    width: 400px; height: 400px;
+    background: #ffc3a0;
+    top: -100px; left: -100px;
+    opacity: 0.6;
+}
+.shape-2 {
+    width: 300px; height: 300px;
+    background: #ffafbd;
+    bottom: 20%; right: -50px;
+    opacity: 0.5;
+}
+
+/* --- Common Classes --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px 0 rgba(255, 154, 162, 0.25);
+    border-color: #fff;
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.badge {
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 1.8rem; 
+    font-weight: 600;
+    background: -webkit-linear-gradient(45deg, #ff808b, #ff9aa2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px auto;
+    max-width: 800px; 
+    line-height: 1.4;
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.abstract-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    text-align: justify;
+    position: relative;
+    border-left: 5px solid var(--primary);
+}
+
+.abstract-box h3 { color: var(--primary-dark); margin-bottom: 10px; }
+
+/* ---------------------------------------------------- */
+/* --- NEW: Main Content Icons (ส่วนที่เพิ่มใหม่) --- */
+/* ---------------------------------------------------- */
+.main-content-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px 20px 60px; /* เพิ่ม padding ล่างให้ห่างจาก Section ถัดไป */
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.content-item {
+    width: 260px;
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+
+.content-item:hover {
+    transform: translateY(-10px);
+}
+
+.content-item a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Minimal Icons Style */
+.icon-minimal {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.content-item:hover .icon-minimal {
+    transform: scale(1.1); /* ขยายไอคอนนิดหน่อยตอน Hover */
+}
+
+/* สีเฉพาะของไอคอน (ตามรูปต้นฉบับ) */
+.icon-report { color: #555555; }      /* Report สีเทาเข้ม */
+.icon-listener { color: #ff9aa2; }    /* Listener สีเขียว */
+.icon-github { color: #333333; }      /* GitHub สีดำ */
+
+/* Typography สำหรับ Main Content */
+.content-item h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    color: #ff9aa2; /* สีฟ้า Blue (ตามรูปต้นฉบับ) */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.content-item p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+/* --- Section Titles --- */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-main);
+    margin: 60px 0 30px;
+    font-weight: 600;
+}
+
+.sub-title {
+    text-align: center;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- Team Members (Single Row Layout) --- */
+.team-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.profile-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    background-color: #fff;
+    border: 4px solid #fff;
+}
+
+.real-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-role {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.member-name {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #6c757d;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.img-link {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.img-link:hover {
+    transform: scale(1.05);
+}
+
+/* --- Workflow & Poster --- */
+.full-width-card {
+    padding: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.placeholder-img {
+    background-color: rgba(255,255,255,0.5);
+    border: 2px dashed var(--primary);
+    border-radius: 15px;
+    padding: 60px 20px;
+    color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Activities & Achievements --- */
+.achievement-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.achievement-card {
+    width: 240px;
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    border-color: #fff;
+    box-shadow: 0 15px 40px 0 rgba(255, 154, 162, 0.25);
+}
+
+.achievement-card img {
+    width: 100%;
+    height: auto; 
+    object-fit: contain;
+    max-height: 250px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.achieve-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.achieve-icon.silver { color: #C0C0C0; border: 2px solid #C0C0C0; }
+.achieve-icon.video { color: #FF6B6B; border: 2px solid #FF6B6B; }
+.achieve-icon.cert { color: var(--primary); border: 2px solid var(--primary); }
+
+.achievement-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.achieve-detail {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+footer i { color: var(--primary); }
+
+/* --- Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .team-row, .main-content-grid {
+        gap: 40px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-member, .content-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
